@@ -1,0 +1,41 @@
+<ion-header translucent="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/creation-employe']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let post of posts">
+      <ion-item class="no-padding">
+        <ion-label>
+          <h2>{{ post.id }}</h2>
+          <p>{{ post.nom }}</p>
+          <p>{{ post.prenom }}</p>
+        </ion-label>
+      </ion-item>   
+
+      <ion-toolbar>
+        <ion-buttons slot="primary">
+          <ion-item-option [routerLink]="['/edit-employes', post.id]">
+            <ion-button fill="outline">
+              Update
+              <ion-icon slot="start" name="update"></ion-icon>
+            </ion-button>
+          </ion-item-option>
+          <ion-button slot="primary" color="danger" (click)="deleteEmployes(post.id)">
+            Delete
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

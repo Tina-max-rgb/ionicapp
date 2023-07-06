@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar translucent>
+    <ion-title>edit-employes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">edit-employes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="post.nom" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input type="text" [(ngModel)]="post.prenom" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="tertiary" (click)="updateEmploye(post)">
+      Update
+    </ion-button>
+  </ion-content>
+</ion-content>
